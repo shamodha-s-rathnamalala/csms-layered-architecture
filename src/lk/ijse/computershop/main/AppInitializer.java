@@ -19,7 +19,6 @@ public class AppInitializer extends Application {
     }
     @Override
     public void start(Stage stage) throws Exception {
-        //new Project(stage);
         stage.setTitle("Pronet Computers");
         stage.getIcons().add(new Image("/lk/ijse/computershop/asset/logo.png"));
         stage.initStyle(StageStyle.TRANSPARENT);
