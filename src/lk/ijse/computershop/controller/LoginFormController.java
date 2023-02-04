@@ -94,6 +94,7 @@ public class LoginFormController{
                     try {
                         userService.saveLogin(user);
                         SideBarController.setUserProfile(isAdmin,userName);
+                        Navigation.navigate(Routes.MAIN, loginForm);
                     }  catch (SQLException e){
                         CustomAlert.getInstance().showAlert(Alert.AlertType.ERROR, "Data Base Error", e.getMessage());
                     }
