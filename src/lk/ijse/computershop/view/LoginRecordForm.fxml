@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anc" prefHeight="400.0" prefWidth="600.0" styleClass="transparent" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.computershop.controller.LoginRecordFormController">
+   <children>
+      <Pane prefHeight="700.0" prefWidth="1038.0" styleClass="parent">
+         <children>
+            <Pane layoutX="20.0" layoutY="10.0" prefHeight="620.0" prefWidth="1018.0" styleClass="gray-pane">
+               <children>
+                  <TableView fx:id="tblLogin" layoutX="10.0" layoutY="10.0" prefHeight="600.0" prefWidth="998.0">
+                    <columns>
+                      <TableColumn fx:id="colLoginId" prefWidth="89.0" resizable="false" text="Login Id" />
+                      <TableColumn fx:id="colUserId" prefWidth="125.0" resizable="false" text="User Id" />
+                        <TableColumn fx:id="colUserName" prefWidth="166.0" resizable="false" text="User Name" />
+                        <TableColumn fx:id="colDateTime" prefWidth="211.0" resizable="false" text="Date &amp; Time" />
+                        <TableColumn fx:id="colTelNum" prefWidth="237.0" resizable="false" text="Telephone Number" />
+                        <TableColumn fx:id="colRank" prefWidth="201.0" resizable="false" text="Rank" />
+                    </columns>
+                  </TableView>
+               </children>
+            </Pane>
+            <JFXButton layoutX="899.0" layoutY="656.0" onAction="#factoryResetOnAction" ripplerFill="BLACK" style="-fx-background-color: #c0392b;" text="Factoty reset" textFill="WHITE">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="16.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

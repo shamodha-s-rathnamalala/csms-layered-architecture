@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="loginForm" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#click" style="-fx-background-color: transparent;" styleClass="transparent" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.computershop.controller.LoginFormController">
+   <children>
+      <Pane prefHeight="700.0" prefWidth="1350.0" style="-fx-background-color: transparent;" styleClass="transparent" stylesheets="@../style/style.css">
+         <children>
+            <Pane fx:id="signUpPane" layoutX="475.0" layoutY="100.0" prefHeight="500.0" prefWidth="400.0" styleClass="login-details-pane">
+               <children>
+                  <Pane layoutX="25.0" layoutY="25.0" prefHeight="450.0" prefWidth="350.0" styleClass="login-Pane">
+                     <children>
+                        <AnchorPane layoutX="122.0" layoutY="55.0" prefHeight="2.0" prefWidth="100.0" styleClass="bar" />
+                        <Label alignment="CENTER" layoutY="24.0" prefWidth="346.0" text="sign up" textFill="WHITE">
+                           <font>
+                              <Font name="Tahoma Bold" size="24.0" />
+                           </font>
+                        </Label>
+                        <JFXButton alignment="CENTER" buttonType="RAISED" focusTraversable="false" layoutX="50.0" layoutY="370.0" onAction="#signUpOnAction" prefWidth="250.0" ripplerFill="BLACK" styleClass="login-Button" text="Sign Up" textAlignment="CENTER">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="22.0" />
+                           </font>
+                        </JFXButton>
+                        <PasswordField fx:id="txtSignUpOnePassword" focusTraversable="false" layoutX="70.0" layoutY="280.0" onAction="#txtSignUpOnePasswordOnACtion" onKeyReleased="#txtSignUpOnePasswordKey" prefWidth="230.0" promptText="Password" styleClass="login-text-Field">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font>
+                        </PasswordField>
+                        <Button layoutX="275.0" layoutY="155.0" mnemonicParsing="false" onAction="#showHidePasswordOnAction" style="-fx-background-color: transparent;">
+                           <font>
+                              <Font name="Tahoma" size="1.0" />
+                           </font>
+                        </Button>
+                        <Label fx:id="lblUserId" layoutX="156.0" layoutY="59.0" text="U001" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtSignUpUserName" focusTraversable="false" layoutX="70.0" layoutY="120.0" onAction="#txtSignUpUserNameOnAction" onKeyReleased="#txtSignUpUserNameKey" prefWidth="230.0" promptText="user name" styleClass="login-text-Field">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="txtSignUpNic" focusTraversable="false" layoutX="70.0" layoutY="160.0" onAction="#txtSignUpNicOnAction" onKeyReleased="#txtSignUpNicKey" prefWidth="230.0" promptText="nic" styleClass="login-text-Field">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="txtSignUpTelNum" focusTraversable="false" layoutX="73.0" layoutY="200.0" onAction="#txtSignUpTelNumOnAction" onKeyReleased="#txtSignUpTelNumKey" prefWidth="230.0" promptText="telephone number" styleClass="login-text-Field">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="txtSignUpEmail" focusTraversable="false" layoutX="70.0" layoutY="240.0" onAction="#txtSignUpEmailOnAction" onKeyReleased="#txtSignUpEmailKey" prefWidth="230.0" promptText="email" styleClass="login-text-Field">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font>
+                        </TextField>
+                        <Label fx:id="lblSignUpError" alignment="CENTER" layoutY="417.0" prefWidth="350.0" textFill="RED">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="11.0" />
+                           </font>
+                        </Label>
+                        <FontAwesomeIconView fill="WHITE" glyphName="ARROW_LEFT" layoutX="320.0" layoutY="30.0" onMouseClicked="#goBackOnAction" size="18">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                        </FontAwesomeIconView>
+                        <PasswordField fx:id="txtSignUpVerifyPassword" focusTraversable="false" layoutX="70.0" layoutY="320.0" onAction="#txtSignUpVerifyPasswordOnAction" onKeyReleased="#txtSignUpVerifyPasswordKey" prefWidth="230.0" promptText="Password" styleClass="login-text-Field">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font>
+                        </PasswordField>
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+            <Pane fx:id="loginPane" layoutX="875.0" layoutY="100.0" prefHeight="500.0" prefWidth="400.0" styleClass="login-details-pane">
+               <children>
+                  <Label alignment="CENTER" prefHeight="100.0" prefWidth="400.0" text="Welcome">
+                     <font>
+                        <Font name="Rage Italic" size="64.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutY="80.0" prefHeight="30.0" prefWidth="400.0" text="  Computer Shop Management System" textAlignment="CENTER">
+                     <font>
+                        <Font name="Pristina" size="18.0" />
+                     </font>
+                  </Label>
+                  <Pane layoutX="25.0" layoutY="150.0" prefHeight="300.0" prefWidth="350.0" styleClass="login-Pane">
+                     <children>
+                        <Label fx:id="lblAdmin" alignment="CENTER" layoutY="24.0" prefWidth="346.0" text="Admin" textFill="WHITE">
+                           <font>
+                              <Font name="Tahoma Bold" size="36.0" />
+                           </font>
+                        </Label>
+                        <AnchorPane layoutX="50.0" layoutY="70.0" prefHeight="3.0" prefWidth="250.0" styleClass="bar" />
+                        <TextField fx:id="txtUsername" focusTraversable="false" layoutX="70.0" layoutY="110.0" onAction="#userNameOnAction" onKeyPressed="#userNameKeyPressedOnAction" prefWidth="230.0" promptText="UserName" styleClass="login-text-Field">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font>
+                        </TextField>
+                        <FontAwesomeIconView fill="#38b000" glyphName="USER" size="25" x="40.0" y="130.0" />
+                        <FontAwesomeIconView fill="#38b000" glyphName="LOCK" size="25" x="40.0" y="180.0" />
+                        <Label fx:id="lblCashier" alignment="CENTER" layoutY="24.0" prefWidth="346.0" text="Cashier" textFill="WHITE">
+                           <font>
+                              <Font name="Tahoma Bold" size="36.0" />
+                           </font>
+                        </Label>
+                        <JFXButton alignment="CENTER" buttonType="RAISED" focusTraversable="false" layoutX="50.0" layoutY="204.0" onAction="#logInOnAction" prefWidth="250.0" ripplerFill="BLACK" styleClass="login-Button" text="Login" textAlignment="CENTER">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="22.0" />
+                           </font>
+                        </JFXButton>
+                        <Label fx:id="lblErrors" alignment="CENTER" contentDisplay="TOP" layoutY="253.0" prefWidth="350.0" textFill="#b20000">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font></Label>
+                        <TextField fx:id="txtPassword" focusTraversable="false" layoutX="70.0" layoutY="153.0" onAction="#passwordOnAction" onKeyPressed="#passwordKeyPressedOnAction" prefWidth="230.0" promptText="Password" styleClass="login-text-Field">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font>
+                        </TextField>
+                        <PasswordField fx:id="psPassword" focusTraversable="false" layoutX="70.0" layoutY="153.0" onAction="#passwordOnAction" onKeyPressed="#passwordKeyPressedOnAction" prefWidth="230.0" promptText="Password" styleClass="login-text-Field">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font>
+                        </PasswordField>
+                        <Button layoutX="275.0" layoutY="155.0" mnemonicParsing="false" onAction="#showHidePasswordOnAction" style="-fx-background-color: transparent;">
+                           <font>
+                              <Font name="Tahoma" size="1.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIconView fx:id="fxIconEye" fill="#38b000" glyphName="EYE_SLASH" size="20" />
+                           </graphic>
+                        </Button>
+                        <HBox fx:id="lblCashierSignUp" alignment="CENTER" layoutY="270.0" prefHeight="20.0" prefWidth="350.0">
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="RIGHT" text="Don't have account ? " textAlignment="CENTER" textFill="#575757" />
+                              <Label alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#signUpOnAction" text="Sign up" textAlignment="CENTER" textFill="WHITE">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox fx:id="lblAdminPasswordReset" alignment="CENTER" layoutY="270.0" prefHeight="20.0" prefWidth="350.0">
+                           <children>
+                              <Label fx:id="lblMassage" alignment="CENTER" contentDisplay="RIGHT" text="Forgot your password ? " textAlignment="CENTER" textFill="#575757" />
+                              <Label fx:id="lblAction" alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#ResetPasswordOnAction" text="Reset It" textAlignment="CENTER" textFill="WHITE">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Label>
+                           </children>
+                        </HBox>
+      
+                                          
+                                             </children>
+                  </Pane>
+               </children>
+            </Pane>
+            <Pane fx:id="mainPane" layoutX="475.0" layoutY="50.0" prefHeight="600.0" prefWidth="400.0" styleClass="main-Pane">
+               <children>
+                  <Label layoutX="241.0" layoutY="289.0" prefHeight="39.0" prefWidth="83.0" text="Computers" textAlignment="CENTER" textFill="#575757">
+                     <font>
+                        <Font name="Pristina" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="47.0" layoutY="227.0" text="PRONET" textFill="WHITE">
+                     <font>
+                        <Font name="Tahoma Bold" size="64.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="365.0" layoutY="3.0" mnemonicParsing="false" onAction="#exitOnAction" styleClass="exit-button">
+                     <graphic>
+                        <FontAwesomeIconView fill="RED" glyphName="REMOVE" size="20" />
+                     </graphic>
+                  </Button>
+                  <HBox alignment="CENTER" layoutY="540.0" prefWidth="400.0">
+                     <children>
+                        <JFXButton fx:id="btnUser" alignment="CENTER" contentDisplay="TOP" onAction="#btnUserOnAction" ripplerFill="BLACK" styleClass="user-select-button" text="Cashier" textFill="#757575">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="16.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+
+   </children>
+</AnchorPane>

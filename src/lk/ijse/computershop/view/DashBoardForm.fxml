@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anc" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" styleClass="transparent" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.computershop.controller.DashBoardFormController">
+   <children>
+      <Pane prefHeight="700.0" prefWidth="1038.0" styleClass="parent-white">
+         <children>
+            <Pane layoutX="457.0" layoutY="219.0" prefHeight="435.0" prefWidth="580.0" styleClass="chart-pane">
+               <children>
+                  <BarChart fx:id="barChart" layoutX="11.0" layoutY="6.0" prefHeight="379.0" prefWidth="569.0" style="-fx-font-family: Arial Rounded MT Bold;" title="Transaction in the last 30 days">
+                    <xAxis>
+                      <CategoryAxis label="Number of Day" prefHeight="35.0" prefWidth="493.0" tickLabelFill="WHITE" fx:id="xAxis" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis fx:id="yAxis" label="Number of sales" prefHeight="181.0" prefWidth="46.0" side="LEFT" tickLabelGap="5.0" upperBound="50.0" />
+                    </yAxis>
+                  </BarChart>
+               </children>
+            </Pane>
+            <ScrollPane fx:id="scPane" layoutX="10.0" layoutY="222.0" prefHeight="460.0" prefWidth="430.0" />
+            <HBox layoutX="10.0" layoutY="197.0">
+               <children>
+                  <Label contentDisplay="TOP" prefWidth="200.0" text="  Customer Name">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="16.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Label>
+                  <Label alignment="CENTER" prefWidth="80.0" text="Price">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="16.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Label>
+                  <Label alignment="CENTER" prefWidth="150.0" text="Type">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="160.0" prefHeight="50.0">
+               <children>
+                  <Label text="Recent Orders" textFill="#4834d4">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="24.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="180.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="30.0" prefHeight="100.0">
+               <children>
+                  <VBox prefWidth="180.0" styleClass="card">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                     <children>
+                        <Label contentDisplay="RIGHT" prefWidth="240.0" text="Total Customers     ">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="10.0" top="10.0" />
+                           </VBox.margin>
+                           <graphic>
+                              <FontAwesomeIconView glyphName="USER" size="40" />
+                           </graphic>
+                        </Label>
+                        <Label fx:id="lblTotalCustomer" prefHeight="70.0" prefWidth="106.0" text="0">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="48.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="20.0" />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox prefWidth="180.0" styleClass="card">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                     <HBox.margin>
+                        <Insets left="30.0" />
+                     </HBox.margin>
+                     <children>
+                        <Label contentDisplay="RIGHT" prefWidth="200.0" text="Total Transaction">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="10.0" top="10.0" />
+                           </VBox.margin>
+                           <graphic>
+                              <FontAwesomeIconView glyphName="CART_PLUS" size="40" />
+                           </graphic>
+                        </Label>
+                        <Label fx:id="lblTotalTransaction" prefWidth="200.0" text="0">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="48.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="20.0" />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox prefWidth="180.0" styleClass="card">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                     <children>
+                        <Label contentDisplay="RIGHT" prefWidth="200.0" text="Non return             &#10;Repairs " textFill="#bc0000">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="10.0" top="10.0" />
+                           </VBox.margin>
+                           <graphic>
+                              <FontAwesomeIconView glyphName="WRENCH" size="40" />
+                           </graphic>
+                        </Label>
+                        <Label fx:id="lblTotalRepairmentDelivered" prefWidth="140.0" text="0" textFill="RED">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="48.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="20.0" />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                     <HBox.margin>
+                        <Insets left="30.0" />
+                     </HBox.margin>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox layoutX="625.0" layoutY="10.0" prefHeight="150.0" prefWidth="410.0">
+               <children>
+                  <VBox prefHeight="100.0" styleClass="white-pane">
+                     <children>
+                        <Label text="Today's Summary">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <HBox prefHeight="100.0">
+                           <children>
+                              <VBox prefWidth="180.0" styleClass="card">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                                 <children>
+                                    <Label contentDisplay="RIGHT" prefWidth="200.0" text="Total income              " textAlignment="CENTER" textFill="#00c60d">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="14.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets left="10.0" top="10.0" />
+                                       </VBox.margin>
+                                       <graphic>
+                                          <FontAwesomeIconView glyphName="DOLLAR" size="40" />
+                                       </graphic>
+                                    </Label>
+                                    <Label fx:id="lblTotalIncomeToDay" prefHeight="28.0" prefWidth="176.0" text="Rs.0.00" textFill="#00ff04">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="24.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets left="5.0" top="10.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="30.0" />
+                                 </HBox.margin>
+                              </VBox>
+                              <VBox prefWidth="180.0" styleClass="card">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                                 <children>
+                                    <Label contentDisplay="RIGHT" prefWidth="200.0" text="Total Transaction" textAlignment="CENTER">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="14.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets left="10.0" top="10.0" />
+                                       </VBox.margin>
+                                       <graphic>
+                                          <FontAwesomeIconView glyphName="CART_PLUS" size="40" />
+                                       </graphic>
+                                    </Label>
+                                    <Label fx:id="lblTotalTransactionToDay" prefWidth="140.0" text="0">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="48.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets left="20.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets bottom="10.0" right="10.0" />
+                                 </HBox.margin>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

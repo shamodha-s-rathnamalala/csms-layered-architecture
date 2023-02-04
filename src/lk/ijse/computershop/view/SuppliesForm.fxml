@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anc" prefHeight="400.0" prefWidth="600.0" styleClass="transparent" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.computershop.controller.SuppliesFormController">
+   <children>
+      <Pane prefHeight="700.0" prefWidth="1038.0" styleClass="parent">
+         <children>
+            <Pane layoutX="20.0" layoutY="150.0" prefHeight="530.0" prefWidth="1015.0" styleClass="gray-pane">
+               <children>
+                  <TableView fx:id="tblSupplies" layoutX="30.0" layoutY="14.0" prefHeight="440.0" prefWidth="975.0">
+                     <columns>
+                        <TableColumn fx:id="colCode" prefWidth="84.0" text="Item Code" />
+                        <TableColumn fx:id="colDescription" prefWidth="304.0" text="Description" />
+                        <TableColumn fx:id="colType" prefWidth="77.0" text="Type" />
+                        <TableColumn fx:id="colUnitPrice" prefWidth="70.0" text="Unit Price" />
+                        <TableColumn fx:id="colOldSctockQty" prefWidth="89.0" text="Old Stock Qty" />
+                        <TableColumn fx:id="colQty" prefWidth="61.0" text="Quantity" />
+                        <TableColumn fx:id="colNewStockQty" prefWidth="99.0" text="New Stock Qty" />
+                        <TableColumn fx:id="colTotal" prefWidth="115.0" text="Total" />
+                        <TableColumn fx:id="colAction" prefWidth="75.0" text="Action" />
+                     </columns>
+                  </TableView>
+                  <JFXButton fx:id="btnPlaceOrder" layoutX="875.0" layoutY="485.0" onAction="#PlaceOrderOnAction" prefWidth="130.0" ripplerFill="BLACK" style="-fx-background-color: #2ecc71;" text="Place Supplie" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <HBox alignment="CENTER_LEFT" layoutX="455.0" layoutY="475.0" prefHeight="50.0" prefWidth="400.0" style="-fx-background-color: #3b3b3b; -fx-background-radius: 20px; -fx-border-color: #000000; -fx-border-radius: 18px; -fx-border-width: 4px; -fx-border-style: solid inside;">
+                     <children>
+                        <Label alignment="CENTER" text="      Total :" textFill="#29ff00">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label fx:id="lblTotal" alignment="CENTER" text="Rs.0.00" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <JFXButton buttonType="RAISED" layoutX="30.0" layoutY="487.0" onAction="#resetTableOnAction" ripplerFill="BLACK" style="-fx-background-color: #c0392b;" text="reset Table" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="14.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </Pane>
+            <VBox layoutX="20.0" layoutY="10.0" prefHeight="130.0" prefWidth="354.0" styleClass="gray-pane">
+               <children>
+                  <HBox prefHeight="29.0" prefWidth="435.0">
+                     <children>
+                        <Label prefHeight="29.0" prefWidth="120.0" text="Supplies Id " textFill="WHITE">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label text=":" textFill="WHITE">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="30.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="txtSuppliesId" editable="false" prefHeight="25.0" prefWidth="100.0" styleClass="green-box-text-field">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="14.0" />
+                           </font>
+                        </TextField>
+                        <JFXButton buttonType="RAISED" onAction="#resetOnAction" prefWidth="60.0" ripplerFill="BLACK" style="-fx-background-color: #c0392b;" text="reset" textFill="WHITE">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="14.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </JFXButton>
+                     </children>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox prefHeight="0.0" prefWidth="435.0">
+                     <children>
+                        <Label prefWidth="120.0" text="Supplier Id     " textFill="WHITE">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label prefHeight="29.0" text=":" textFill="WHITE">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="30.0" />
+                           </HBox.margin>
+                        </Label>
+                        <ComboBox fx:id="cmbSupplierId" onAction="#cmbSupplierIdOnAction" prefHeight="30.0" prefWidth="150.0" promptText="Supplier Id" styleClass="green-combo-box" />
+                     </children>
+                     <padding>
+                        <Insets left="10.0" right="20.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox prefHeight="30.0" prefWidth="359.0">
+                     <children>
+                        <Label prefHeight="22.0" prefWidth="120.0" text="Name " textFill="WHITE">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label prefHeight="29.0" text=":" textFill="WHITE">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="30.0" />
+                           </HBox.margin>
+                        </Label>
+                        <ComboBox fx:id="cmbSupplierName" onAction="#cmbSupplierNameOnAction" prefHeight="30.0" prefWidth="150.0" promptText="Supplier Name" styleClass="green-combo-box" />
+                     </children>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox layoutX="380.0" layoutY="10.0" prefHeight="130.0" prefWidth="650.0" styleClass="gray-pane">
+               <children>
+                  <HBox>
+                     <children>
+                        <VBox>
+                           <children>
+                              <Label prefHeight="20.0" prefWidth="85.0" text="Code" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="16.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <ComboBox fx:id="cmbCode" onAction="#cmbCodeOnAction" prefHeight="30.0" prefWidth="100.0" promptText="Code" styleClass="green-combo-box">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </ComboBox>
+                           </children>
+                           <HBox.margin>
+                              <Insets left="10.0" right="20.0" />
+                           </HBox.margin>
+                        </VBox>
+                        <VBox>
+                           <children>
+                              <Label text="Description" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="16.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <ComboBox fx:id="cmbDescription" onAction="#cmbDescriptionOnAction" prefHeight="25.0" prefWidth="150.0" promptText="Description" styleClass="green-combo-box">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </ComboBox>
+                           </children>
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin>
+                        </VBox>
+                        <VBox>
+                           <children>
+                              <Label text="Type" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="16.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <TextField fx:id="txtType" editable="false" focusTraversable="false" prefWidth="120.0" styleClass="green-box-text-field">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="14.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin>
+                        </VBox>
+                        <VBox>
+                           <children>
+                              <Label text="Unit Price" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="16.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <TextField fx:id="txtUnitPrice" editable="false" focusTraversable="false" prefWidth="100.0" styleClass="green-box-text-field">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="14.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin>
+                        </VBox>
+                        <VBox>
+                           <children>
+                              <Label prefWidth="110.0" text="Qty On Stock" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="16.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <TextField fx:id="txtQtyOnStock" editable="false" focusTraversable="false" prefWidth="100.0" styleClass="green-box-text-field">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="14.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </VBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="40.0" prefWidth="650.0">
+                     <children>
+                        <Label text="Quantity" textFill="WHITE">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="16.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="txtQty" focusTraversable="false" onAction="#qtyOnAction" onKeyReleased="#qtyKeyReleasedOnAction" onKeyTyped="#qtyKeyTypedOnAction" prefWidth="100.0" styleClass="green-text-Field">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="14.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin>
+                        </TextField>
+                        <JFXButton fx:id="btnAdd" buttonType="RAISED" onAction="#addOnAction" prefWidth="165.0" ripplerFill="BLACK" style="-fx-background-color: #3498db;" text="   Add to cart" textFill="WHITE">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="16.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIconView glyphName="CART_PLUS" size="20" />
+                           </graphic>
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </JFXButton>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

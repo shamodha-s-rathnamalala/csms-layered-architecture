@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="ancViewPurchase" prefHeight="400.0" prefWidth="600.0" styleClass="transparent" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.computershop.controller.ViewSuppliesFormController">
+   <children>
+      <Pane prefHeight="700.0" prefWidth="1038.0" styleClass="parent">
+         <children>
+            <Pane layoutX="20.0" layoutY="20.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="648.0" prefWidth="1015.0" styleClass="gray-pane">
+               <children>
+                  <TableView fx:id="tblSupplies" layoutX="10.0" layoutY="20.0" prefHeight="200.0" prefWidth="995.0">
+                     <columns>
+                        <TableColumn fx:id="colSuppliesId" prefWidth="209.6666717529297" text="Supplies Id" />
+                        <TableColumn fx:id="colDateTime" prefWidth="202.3333282470703" text="Date &amp; Time" />
+                        <TableColumn fx:id="colSupplierId" prefWidth="174.0" text="Supplier Id" />
+                        <TableColumn fx:id="colTotal" prefWidth="310.9999694824219" text="Total" />
+                        <TableColumn fx:id="colAction" prefWidth="99.6666259765625" text="Action" />
+                     </columns>
+                  </TableView>
+                  <TableView fx:id="tblItem" layoutX="10.0" layoutY="255.0" prefHeight="380.0" prefWidth="995.0">
+                     <columns>
+                        <TableColumn fx:id="colItemCode" prefWidth="89.66666412353516" text="Item Code" />
+                        <TableColumn fx:id="colItemDiscription" prefWidth="354.0" text="Description" />
+                        <TableColumn fx:id="colItemQty" prefWidth="103.6666259765625" text="Quantity" />
+                        <TableColumn fx:id="colItemUnitPrice" prefWidth="240.0" text="Unit Price" />
+                        <TableColumn fx:id="colItemTotal" prefWidth="206.0" text="Total" />
+                     </columns>
+                  </TableView>
+                  <Label fx:id="lblSuppliesId" alignment="CENTER" layoutY="220.0" prefWidth="1015.0" textAlignment="CENTER" textFill="#40ff00">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

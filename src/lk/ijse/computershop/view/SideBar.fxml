@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1350.0" style="-fx-background-radius: 15px;" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.computershop.controller.SideBarController">
+   <left>
+      <Pane prefHeight="700.0" prefWidth="280.0" styleClass="navigation-layout" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="150.0" prefWidth="280.0" styleClass="profile-layout">
+               <children>
+                  <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../asset/manager.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <VBox alignment="CENTER" prefHeight="150.0" prefWidth="170.0">
+                     <children>
+                        <Label fx:id="lblUserName" text="name" textFill="WHITE">
+                           <font>
+                              <Font name="Arial Unicode MS" size="24.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblUserRank" text="rank" textFill="#939292">
+                           <font>
+                              <Font name="Arial Unicode MS" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="date" text="date" textFill="#939292">
+                           <font>
+                              <Font name="Arial Unicode MS" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <VBox fx:id="vbAdmin" layoutY="206.0" prefWidth="280.0">
+               <children>
+                  <Button fx:id="btnLoginRecord" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#goLoginRecordAction" prefHeight="44.0" prefWidth="280.0" styleClass="navigation-button" text="             Login Record" textFill="WHITE">
+                     <font>
+                        <Font name="Times New Roman" size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <graphic>
+                        <FontAwesomeIconView fx:id="btnLoginRecordIcon" fill="WHITE" glyphName="LIST" size="30" />
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnUser" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#goUserOnAction" prefHeight="44.0" prefWidth="280.0" styleClass="navigation-button" text="               User" textFill="WHITE">
+                     <font>
+                        <Font name="Times New Roman" size="18.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView fx:id="btnUserIcon" fill="WHITE" glyphName="USER" size="30" />
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnEmployee" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#goEmployerOnAction" prefHeight="44.0" prefWidth="280.0" styleClass="navigation-button" text="               Employee" textFill="WHITE">
+                     <font>
+                        <Font name="Times New Roman" size="18.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView fx:id="btnEmployeeIcon" fill="WHITE" glyphName="USER" size="30" />
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnSupplier" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#goSupplierOnAction" prefHeight="44.0" prefWidth="280.0" styleClass="navigation-button" text="               Supplier" textFill="WHITE">
+                     <font>
+                        <Font name="Times New Roman" size="18.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView fx:id="btnSupplierIcon" fill="WHITE" glyphName="USER" size="30" />
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnSupplies" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#goSuppliesOnAction" prefHeight="44.0" prefWidth="280.0" styleClass="navigation-button" text="             Supplies" textFill="WHITE">
+                     <font>
+                        <Font name="Times New Roman" size="18.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView fx:id="btnSuppliesIcon" fill="WHITE" glyphName="TRUCK" size="30" />
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnViewSupplies" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#goViewSuppliesOnAction" prefHeight="44.0" prefWidth="280.0" styleClass="navigation-button" text="             View Supplies" textFill="WHITE">
+                     <font>
+                        <Font name="Times New Roman" size="18.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView fx:id="btnViewSuppliesIcon" fill="WHITE" glyphName="LIST" size="30" />
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnItem" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#goItemOnAction" prefHeight="44.0" prefWidth="280.0" styleClass="navigation-button" text="             Item" textFill="WHITE">
+                     <font>
+                        <Font name="Times New Roman" size="18.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView fx:id="btnItemIcon" fill="WHITE" glyphName="DESKTOP" size="30" />
+                     </graphic>
+                  </Button>
+                  <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#goDashBoardOnAction" prefHeight="44.0" prefWidth="280.0" styleClass="admin-button" text="              Dashboard" textFill="WHITE">
+                     <font>
+                        <Font name="Times New Roman" size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="80.0" />
+                     </VBox.margin>
+                     <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="HOME" size="30" />
+                     </graphic>
+                  </Button>
+                  <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#logOutOnAction" prefHeight="44.0" prefWidth="280.0" styleClass="log-out-button" text="               Logout" textFill="WHITE">
+                     <font>
+                        <Font name="Times New Roman" size="18.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="SIGN_OUT" size="30" />
+                     </graphic>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </VBox>
+            <VBox fx:id="vbCashier" layoutY="206.0" prefWidth="280.0">
+               <children>
+                  <Button fx:id="btnDashBoard" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#goDashBoardOnAction" prefHeight="44.0" prefWidth="280.0" styleClass="navigation-button" text="              Dashboard" textFill="WHITE">
+                     <font>
+                        <Font name="Times New Roman" size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <graphic>
+                        <FontAwesomeIconView fx:id="btnDashBoardIcon" fill="WHITE" glyphName="HOME" size="30" />
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnCustomer" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#goCustomerOnAction" prefHeight="44.0" prefWidth="280.0" styleClass="navigation-button" text="               Customer" textFill="WHITE">
+                     <font>
+                        <Font name="Times New Roman" size="18.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView fx:id="btnCustomerIcon" fill="WHITE" glyphName="USER" size="30" />
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnPlaceorder" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#goPlaceOrderOnAction" prefHeight="44.0" prefWidth="280.0" styleClass="navigation-button" text="              Place order" textFill="WHITE">
+                     <font>
+                        <Font name="Times New Roman" size="18.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView fx:id="btnPlaceorderIcon" fill="WHITE" glyphName="CART_PLUS" size="30" />
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnRepair" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#goRepairOnAction" prefHeight="44.0" prefWidth="280.0" styleClass="navigation-button" text="              Repair" textFill="WHITE">
+                     <font>
+                        <Font name="Times New Roman" size="18.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView fx:id="btnRepairIcon" fill="WHITE" glyphName="WRENCH" size="30" />
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnViewPurchases" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#goViewPurchasesOnAction" prefHeight="44.0" prefWidth="280.0" styleClass="navigation-button" text="             View Purchases" textFill="WHITE">
+                     <font>
+                        <Font name="Times New Roman" size="18.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView fx:id="btnViewPurchasesIcon" fill="WHITE" glyphName="LIST" size="30" />
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnStock" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#goStockOnAction" prefHeight="44.0" prefWidth="280.0" styleClass="navigation-button" text="            Stock" textFill="WHITE">
+                     <font>
+                        <Font name="Times New Roman" size="18.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView fx:id="btnStockIcon" fill="WHITE" glyphName="CUBES" size="30" />
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnReport" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#goReportsOnAction" prefHeight="44.0" prefWidth="280.0" styleClass="navigation-button" text="               Report" textFill="WHITE">
+                     <font>
+                        <Font name="Times New Roman" size="18.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView fx:id="btnReportIcon" fill="WHITE" glyphName="BOOK" size="30" />
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnAdmin" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#adminOnAction" prefHeight="44.0" prefWidth="270.0" styleClass="admin-button" text="               Seting" textFill="WHITE">
+                     <font>
+                        <Font name="Times New Roman" size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="80.0" />
+                     </VBox.margin>
+                     <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="GEAR" size="30" />
+                     </graphic>
+                  </Button>
+                  <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#logOutOnAction" prefHeight="44.0" prefWidth="280.0" styleClass="log-out-button" text="               Logout" textFill="WHITE">
+                     <font>
+                        <Font name="Times New Roman" size="18.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="SIGN_OUT" size="30" />
+                     </graphic>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </VBox>
+         </children>
+      </Pane>
+   </left>
+   <center>
+      <AnchorPane fx:id="anc" prefHeight="700.0" prefWidth="1038.0" BorderPane.alignment="CENTER" />
+   </center>
+   <right>
+      <Pane fx:id="rightPane" styleClass="right-pane" BorderPane.alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" onAction="#exitOnAction" styleClass="exit-button">
+               <graphic>
+                  <FontAwesomeIconView fill="RED" glyphName="REMOVE" size="20" />
+               </graphic>
+            </Button>
+         </children>
+      </Pane>
+   </right>
+</BorderPane>

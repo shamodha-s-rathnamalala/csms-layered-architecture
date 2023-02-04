@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="ancViewPurchase" prefHeight="400.0" prefWidth="600.0" styleClass="transparent" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.computershop.controller.ViewPurchasesFormController">
+   <children>
+      <Pane prefHeight="700.0" prefWidth="1038.0" styleClass="parent">
+         <children>
+            <Pane layoutX="20.0" layoutY="20.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="648.0" prefWidth="1015.0" styleClass="gray-pane">
+               <children>
+                  <TableView fx:id="tblTransaction" layoutX="20.0" layoutY="20.0" prefHeight="282.0" prefWidth="980.0">
+                    <columns>
+                      <TableColumn fx:id="colCusId" prefWidth="83.0" text="Customer Id" />
+                      <TableColumn fx:id="colTransactionId" prefWidth="88.0" text="Transaction Id" />
+                        <TableColumn fx:id="colDateTime" prefWidth="169.0" text="Date &amp; Time" />
+                        <TableColumn fx:id="colType" prefWidth="118.0" text="Type" />
+                        <TableColumn fx:id="colCusName" prefWidth="169.0" text="Customer Name" />
+                        <TableColumn fx:id="colTelNumber" prefWidth="184.0" text="Telephone Number" />
+                        <TableColumn fx:id="colTransactionTotal" prefWidth="88.0" text="Total" />
+                        <TableColumn fx:id="colAction" text="Action" />
+                    </columns>
+                  </TableView>
+                  <TableView fx:id="tblItem" layoutX="20.0" layoutY="342.0" prefHeight="288.0" prefWidth="519.0">
+                     <columns>
+                        <TableColumn fx:id="colItemCode" prefWidth="83.0" text="Item Code" />
+                        <TableColumn fx:id="colItemDiscription" prefWidth="129.0" text="Description" />
+                        <TableColumn fx:id="colItemQty" prefWidth="93.0" text="Quantity" />
+                        <TableColumn fx:id="colUnitPrice" prefWidth="101.0" text="Unit Price" />
+                        <TableColumn fx:id="colItemTotal" prefWidth="101.0" text="Total" />
+                     </columns>
+                  </TableView>
+                  <TableView fx:id="tblRepair" layoutX="560.0" layoutY="342.0" prefHeight="288.0" prefWidth="444.0">
+                     <columns>
+                        <TableColumn fx:id="colRepairId" prefWidth="129.0" text="Repair Id" />
+                        <TableColumn fx:id="colRepairDescription" prefWidth="201.0" text="Description" />
+                        <TableColumn fx:id="colRepairTotal" minWidth="0.0" prefWidth="113.0" text="Total" />
+                     </columns>
+                  </TableView>
+                  <Label fx:id="lblTransactionId" alignment="CENTER" layoutY="309.0" prefWidth="1015.0" textAlignment="CENTER" textFill="#40ff00">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

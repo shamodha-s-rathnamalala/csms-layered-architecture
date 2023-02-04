@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="ancStock" prefHeight="400.0" prefWidth="600.0" styleClass="transparent" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.computershop.controller.StockFormController">
+   <children>
+      <Pane prefHeight="700.0" prefWidth="1038.0" styleClass="parent">
+         <children>
+            <Pane layoutX="20.0" layoutY="140.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="545.0" prefWidth="1017.0" styleClass="gray-pane">
+               <children>
+                  <TableView fx:id="tblItem" layoutX="20.0" layoutY="40.0" prefHeight="483.0" prefWidth="980.0">
+                     <columns>
+                        <TableColumn fx:id="colCode" prefWidth="83.0" text="Item Code" />
+                        <TableColumn fx:id="colType" prefWidth="88.0" text="Item Type" />
+                        <TableColumn fx:id="colDescription" prefWidth="264.0" text="Description" />
+                        <TableColumn fx:id="colUnitPrice" prefWidth="232.0" text="Unit Price" />
+                        <TableColumn fx:id="colQtyOnStock" prefWidth="220.0" text="QTY On Stock" />
+                        <TableColumn fx:id="colAction" prefWidth="92.0" text="Action" />
+                     </columns>
+                  </TableView>
+                  <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="5.0" styleClass="search">
+                     <children>
+                        <FontAwesomeIconView fill="WHITE" glyphName="SEARCH" size="18" x="5.0">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </FontAwesomeIconView>
+                        <TextField fx:id="txtSearch" focusTraversable="false" onMouseClicked="#txtSearchMouseOnClick" prefHeight="30.0" prefWidth="250.0" promptText="Search" styleClass="search" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </HBox>
+               </children>
+            </Pane>
+            <Pane layoutX="20.0" layoutY="10.0" prefHeight="120.0" prefWidth="662.0" styleClass="gray-pane">
+               <children>
+                  <HBox layoutX="10.0" layoutY="20.0">
+                     <children>
+                        <VBox prefHeight="98.0">
+                           <children>
+                              <HBox>
+                                 <children>
+                                    <Label prefWidth="150.0" text="Item Code" textFill="WHITE">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <ComboBox fx:id="cmbItem" onAction="#cmbItemOnAction" prefWidth="200.0" styleClass="green-combo-box" />
+                                 </children>
+                              </HBox>
+                              <HBox>
+                                 <children>
+                                    <Label prefWidth="150.0" text="Description" textFill="WHITE">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <ComboBox fx:id="cmbDescription" onAction="#cmbDescriptionOnAction" prefWidth="200.0" styleClass="green-combo-box" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="20.0" />
+                                 </VBox.margin>
+                              </HBox>
+                           </children>
+                           <HBox.margin>
+                              <Insets right="50.0" />
+                           </HBox.margin>
+                        </VBox>
+                        <VBox prefHeight="98.0">
+                           <children>
+                              <HBox prefWidth="226.0">
+                                 <children>
+                                    <Label prefWidth="150.0" text="Quantity to be &#10;Added" textFill="WHITE">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="txtQty" onKeyTyped="#txtQtyOnStockKeyPressedOnAction" onMouseClicked="#txtQtyOnClick" styleClass="green-text-Field">
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </TextField>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="20.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox alignment="CENTER_RIGHT" prefWidth="226.0">
+                                 <children>
+                                    <JFXButton buttonType="RAISED" onAction="#resetOnAction" prefHeight="32.0" ripplerFill="BLACK" style="-fx-background-color: #c0392b;" text="reset" textFill="WHITE">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="16.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets right="30.0" />
+                                       </HBox.margin>
+                                    </JFXButton>
+                                    <JFXButton fx:id="btnM" buttonType="RAISED" onAction="#minusOnAction" prefHeight="32.0" prefWidth="32.0" ripplerFill="BLACK" style="-fx-background-color: red;" text="-" textFill="WHITE">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="16.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets right="10.0" />
+                                       </HBox.margin>
+                                    </JFXButton>
+                                    <JFXButton fx:id="btnP" buttonType="RAISED" ellipsisString="" onAction="#addOnAction" prefHeight="32.0" prefWidth="32.0" ripplerFill="BLACK" style="-fx-background-color: #2ecc71;" text="+" textAlignment="CENTER" textFill="WHITE">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="16.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets right="10.0" />
+                                       </HBox.margin>
+                                    </JFXButton>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

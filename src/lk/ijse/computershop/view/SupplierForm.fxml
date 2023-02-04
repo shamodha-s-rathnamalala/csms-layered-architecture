@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anc" prefHeight="400.0" prefWidth="600.0" styleClass="transparent" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.computershop.controller.SupplierFormController">
+   <children>
+      <Pane prefHeight="700.0" prefWidth="1038.0" styleClass="parent">
+         <children>
+            <Pane layoutX="20.0" layoutY="270.0" prefHeight="410.0" prefWidth="1015.0" styleClass="gray-pane">
+               <children>
+                  <TableView fx:id="tbl" layoutX="20.0" layoutY="45.0" prefHeight="350.0" prefWidth="980.0">
+                     <columns>
+                        <TableColumn fx:id="colId" prefWidth="75.0" text="Supplier Id" />
+                        <TableColumn fx:id="colName" prefWidth="203.0" text="Name" />
+                        <TableColumn fx:id="colAddress" prefWidth="185.0" text="Address" />
+                        <TableColumn fx:id="colTelNumber" prefWidth="186.0" text="Tel Number" />
+                        <TableColumn fx:id="colEmail" prefWidth="197.0" text="Email" />
+                        <TableColumn fx:id="colAction" prefWidth="133.0" text="Action" />
+                     </columns>
+                  </TableView>
+                  <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="5.0" styleClass="search">
+                     <children>
+                        <FontAwesomeIconView fill="WHITE" glyphName="SEARCH" size="18" x="5.0">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </FontAwesomeIconView>
+                        <TextField fx:id="txtSearch" focusTraversable="false" onMouseClicked="#txtSearchMouseOnClick" prefHeight="30.0" prefWidth="250.0" promptText="Search" styleClass="search" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </HBox>
+               </children>
+            </Pane>
+            <Pane layoutX="20.0" layoutY="10.0" prefHeight="240.0" prefWidth="800.0" styleClass="gray-pane">
+               <children>
+                  <VBox layoutX="20.0" layoutY="20.0">
+                     <children>
+                        <HBox>
+                           <children>
+                              <Label prefWidth="170.0" text="Supplier Id" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label text=":" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="txtId" editable="false" focusTraversable="false" prefHeight="35.0" prefWidth="146.0" styleClass="green-box-text-field">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="14.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="5.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox>
+                           <children>
+                              <Label prefWidth="170.0" text="Name" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label text=":" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="txtName" focusTraversable="false" onAction="#nameOnAction" onKeyReleased="#nameKeyPressedOnAction" prefWidth="430.0" styleClass="green-text-Field">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="14.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="5.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox>
+                           <children>
+                              <Label prefWidth="170.0" text="Address" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label text=":" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="txtAddress" focusTraversable="false" onAction="#addressOnAction" onKeyReleased="#addressKeyPressedOnAction" prefWidth="430.0" styleClass="green-text-Field">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="14.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="5.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox>
+                           <children>
+                              <Label prefWidth="170.0" text="Telephone Number" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label text=":" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="txtTelNumber" focusTraversable="false" onAction="#telNumberOnAction" onKeyReleased="#telNumKeyPressedOnAction" prefWidth="430.0" styleClass="green-text-Field">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="14.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="5.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox>
+                           <children>
+                              <Label prefWidth="170.0" text="Email" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label text=":" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="txtEmail" focusTraversable="false" onAction="#emailOnAction" onKeyReleased="#emailKeyPressedOnAction" prefWidth="430.0" styleClass="green-text-Field">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="14.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <JFXButton buttonType="RAISED" layoutX="650.0" layoutY="90.0" onAction="#resetOnAction" prefWidth="100.0" ripplerFill="BLACK" style="-fx-background-color: #c0392b;" text="reset" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="btnUpdate" buttonType="RAISED" layoutX="650.0" layoutY="190.0" onAction="#updateOnAction" prefWidth="100.0" ripplerFill="BLACK" style="-fx-background-color: #f39c12;" text="Update" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="btnAdd" buttonType="RAISED" layoutX="650.0" layoutY="140.0" onAction="#addOnAction" prefWidth="100.0" ripplerFill="BLACK" style="-fx-background-color: #2ecc71;" text="add" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="16.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

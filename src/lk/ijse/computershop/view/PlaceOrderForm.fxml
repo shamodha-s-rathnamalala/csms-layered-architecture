@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anc" prefHeight="400.0" prefWidth="600.0" styleClass="parent" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.computershop.controller.PlaceOrderFormController">
+   <children>
+      <Pane prefHeight="700.0" prefWidth="1038.0" styleClass="parent">
+         <children>
+            <Pane layoutX="449.0" layoutY="20.0" prefHeight="660.0" prefWidth="588.0" styleClass="gray-pane">
+               <children>
+                  <Label alignment="CENTER" layoutY="10.0" prefWidth="588.0" text="Item" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutY="310.0" prefWidth="588.0" style="-fx-border-color: #f5f5f5; -fx-border-width: 3px 0px 0px 0px;" text="Repair" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <TableView fx:id="tblItem" layoutX="10.0" layoutY="40.0" prefHeight="260.0" prefWidth="570.0">
+                    <columns>
+                      <TableColumn fx:id="colItemCode" editable="false" prefWidth="82.0" resizable="false" text="Item Code" />
+                      <TableColumn fx:id="colItemDescription" editable="false" prefWidth="140.0" resizable="false" text="Description" />
+                        <TableColumn fx:id="colItemQty" editable="false" prefWidth="98.0" resizable="false" text="Quantity" />
+                        <TableColumn fx:id="colItemUnitPrice" editable="false" prefWidth="85.0" resizable="false" text="Unit Price" />
+                        <TableColumn fx:id="colItemTotal" editable="false" prefWidth="84.0" resizable="false" text="Total" />
+                        <TableColumn fx:id="colItemAction" editable="false" resizable="false" text="Action" />
+                    </columns>
+                  </TableView>
+                  <TableView fx:id="tblRepair" layoutX="10.0" layoutY="340.0" prefHeight="230.0" prefWidth="570.0">
+                     <columns>
+                        <TableColumn fx:id="colRepairId" prefWidth="95.0" resizable="false" text="Repair Id" />
+                        <TableColumn fx:id="colRepairDescription" minWidth="0.0" prefWidth="284.0" resizable="false" text="RepairDescription" />
+                        <TableColumn fx:id="colRepairPrice" minWidth="0.0" prefWidth="112.0" resizable="false" text="Repair Price" />
+                        <TableColumn fx:id="colRepairActon" minWidth="0.0" prefWidth="78.0" resizable="false" text="Action" />
+                     </columns>
+                  </TableView>
+                  <JFXButton fx:id="btnPlaceOrder" layoutX="460.0" layoutY="605.0" onAction="#PlaceOrderOnAction" prefWidth="120.0" ripplerFill="BLACK" style="-fx-background-color: #2ecc71;" text="Place Order" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <HBox alignment="CENTER_LEFT" layoutX="120.0" layoutY="595.0" prefHeight="50.0" prefWidth="328.0" style="-fx-background-color: #3b3b3b; -fx-background-radius: 20px; -fx-border-color: #000000; -fx-border-radius: 18px; -fx-border-width: 4px; -fx-border-style: solid inside;">
+                     <children>
+                        <Label alignment="CENTER" text="      Total :" textFill="#29ff00">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label fx:id="lblTotal" alignment="CENTER" text="Rs.0.00" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <Pane layoutY="579.0" prefHeight="3.0" prefWidth="588.0" styleClass="bar" />
+                  <JFXButton buttonType="RAISED" layoutX="10.0" layoutY="610.0" onAction="#resetTableOnAction" ripplerFill="BLACK" style="-fx-background-color: #c0392b;" text="reset Table" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="14.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </Pane>
+            <Pane layoutX="10.0" layoutY="150.0" prefHeight="460.0" prefWidth="430.0" styleClass="gray-pane">
+               <children>
+                  <Label alignment="CENTER" layoutY="240.0" prefWidth="430.0" style="-fx-border-color: #f5f5f5; -fx-border-width: 3px 0px 0px 0px;" text="Repair" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutY="24.0" prefWidth="430.0" text="Item" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <HBox alignment="CENTER_LEFT" layoutY="50.0" prefWidth="430.0">
+                     <children>
+                        <VBox>
+                           <children>
+                              <Label text="Code" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="14.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <ComboBox fx:id="cmbItemCode" onAction="#cmbItemCodeOnAction" prefWidth="100.0" promptText="Code" styleClass="green-combo-box">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </ComboBox>
+                           </children>
+                           <HBox.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </HBox.margin>
+                        </VBox>
+                        <VBox>
+                           <children>
+                              <Label text="Description" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="14.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <ComboBox fx:id="cmbItemDescription" onAction="#cmbItemDescriptionOnAction" prefWidth="300.0" promptText="Description" styleClass="green-combo-box">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </ComboBox>
+                           </children>
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <HBox layoutY="280.0" prefHeight="55.0" prefWidth="430.0">
+                     <children>
+                        <VBox prefHeight="55.0" prefWidth="103.0">
+                           <children>
+                              <Label prefHeight="20.0" prefWidth="85.0" text="Repair Id" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="14.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <ComboBox fx:id="cmbRepairId" onAction="#cmbRepairIdOnActon" prefHeight="25.0" prefWidth="150.0" promptText="Id" styleClass="green-combo-box">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </ComboBox>
+                           </children>
+                           <HBox.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </HBox.margin>
+                        </VBox>
+                        <VBox prefHeight="55.0" prefWidth="320.0">
+                           <children>
+                              <Label prefHeight="20.0" prefWidth="125.0" text="Description" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="14.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <TextField fx:id="txtRepairDescription" editable="false" focusTraversable="false" prefHeight="25.0" prefWidth="0.0" styleClass="green-box-text-field">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="14.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" layoutY="120.0" prefWidth="430.0">
+                     <children>
+                        <VBox>
+                           <children>
+                              <Label text="Type" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="14.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <TextField fx:id="txtType" editable="false" focusTraversable="false" prefWidth="120.0" styleClass="green-box-text-field">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="14.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                           <HBox.margin>
+                              <Insets left="5.0" />
+                           </HBox.margin>
+                        </VBox>
+                        <VBox>
+                           <children>
+                              <Label text="Unit Price" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="14.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <TextField fx:id="txtUnitPrice" editable="false" focusTraversable="false" prefWidth="150.0" styleClass="green-box-text-field">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="14.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                           <HBox.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </HBox.margin>
+                        </VBox>
+                        <VBox>
+                           <children>
+                              <Label text="QTY On Stock" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="14.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <TextField fx:id="txtQtyOnStock" editable="false" focusTraversable="false" prefWidth="130.0" styleClass="green-box-text-field">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="14.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </VBox>
+                        <VBox>
+                           <children>
+                              <Label text="Quantity" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="14.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <TextField fx:id="txtQty" focusTraversable="false" onAction="#txtQtyOnAction" onKeyReleased="#itemQtyKeyReleasedOnAction" onKeyTyped="#qtyKeyTypedOnAction" prefWidth="110.0" styleClass="green-text-Field">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="14.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                           <HBox.margin>
+                              <Insets right="5.0" />
+                           </HBox.margin>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <VBox layoutX="310.0" layoutY="350.0" prefHeight="55.0" prefWidth="113.0">
+                     <children>
+                        <Label text="Repair Price" textFill="WHITE">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <TextField fx:id="txtRepairPrice" focusTraversable="false" onAction="#txtRepairPriceOnAction" onKeyReleased="#repairQtyKeyReleasedOnAction" onKeyTyped="#priceKeyTypedOnAction" styleClass="green-text-Field">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="14.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </VBox>
+                  <JFXButton fx:id="btnItemUpdate" layoutX="320.0" layoutY="200.0" onAction="#itemUpdateOnAction" prefWidth="100.0" ripplerFill="BLACK" style="-fx-background-color: #f39c12;" text="Update" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="btnRepairUpdate" layoutX="320.0" layoutY="420.0" onAction="#repairUpdateOnAction" prefWidth="100.0" ripplerFill="BLACK" style="-fx-background-color: #f39c12;" text="Update" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="btnRepairAdd" layoutX="320.0" layoutY="420.0" onAction="#repairAddOnAction" prefWidth="100.0" ripplerFill="BLACK" style="-fx-background-color: #2ecc71;" text="Add" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="btnItemAdd" layoutX="320.0" layoutY="200.0" onAction="#itemAddOnAction" prefWidth="100.0" ripplerFill="BLACK" style="-fx-background-color: #2ecc71;" text="Add" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" layoutX="10.0" layoutY="200.0" onAction="#resetItem" prefWidth="60.0" ripplerFill="BLACK" style="-fx-background-color: #c0392b;" text="reset" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="14.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" layoutX="10.0" layoutY="420.0" onAction="#resetRepair" prefWidth="60.0" ripplerFill="BLACK" style="-fx-background-color: #c0392b;" text="reset" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="14.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </Pane>
+            <Pane layoutX="10.0" layoutY="10.0" prefHeight="120.0" prefWidth="430.0" styleClass="gray-pane">
+               <children>
+                  <HBox alignment="CENTER_LEFT" layoutY="10.0" prefHeight="30.0" prefWidth="430.0">
+                     <children>
+                        <Label prefHeight="29.0" prefWidth="110.0" text="Transaction Id " textFill="WHITE">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="14.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="txtTransactionId" editable="false" prefHeight="25.0" prefWidth="150.0" styleClass="green-box-text-field">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="14.0" />
+                           </font>
+                        </TextField>
+                        <JFXButton buttonType="RAISED" onAction="#resetOnAction" prefWidth="60.0" ripplerFill="BLACK" style="-fx-background-color: #c0392b;" text="reset" textFill="WHITE">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="14.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="80.0" />
+                           </HBox.margin>
+                        </JFXButton>
+                     </children>
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" layoutY="45.0" prefHeight="30.0" prefWidth="430.0">
+                     <children>
+                        <Label prefWidth="110.0" text="Customer Id     " textFill="WHITE">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="14.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <ComboBox fx:id="cmbCustomerId" onAction="#cmbCustomerIdOnAction" prefHeight="27.0" prefWidth="150.0" promptText="Customer Id" styleClass="green-combo-box" />
+                     </children>
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" layoutY="80.0" prefHeight="30.0" prefWidth="430.0">
+                     <children>
+                        <Label prefHeight="22.0" prefWidth="110.0" text="Name " textFill="WHITE">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="14.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="txtCustomerName" editable="false" prefHeight="29.0" prefWidth="300.0" styleClass="green-box-text-field">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="14.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
