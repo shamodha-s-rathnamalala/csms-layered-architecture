@@ -31,9 +31,9 @@ import java.util.stream.Collectors;
 
 public class UserFormController {
     @FXML
-    public FontAwesomeIconView fxIconEye;
+    private FontAwesomeIconView fxIconEye;
     @FXML
-    public PasswordField psPassword;
+    private PasswordField psPassword;
     @FXML
     private AnchorPane anc;
 
@@ -94,13 +94,13 @@ public class UserFormController {
     private final ObservableList<UserTM> userTMS = FXCollections.observableArrayList();
     private UserTM userTM;
     private UserDTO userDTO;
-    boolean isValidName=false;
-    boolean isValidPassword=false;
-    boolean isValidNic=false;
-    boolean isValidTelephoneNumber=false;
-    boolean isValidEmail=false;
-    boolean isUpdate=false;
-    boolean isPasswordHide = true;
+    private boolean isValidName=false;
+    private boolean isValidPassword=false;
+    private boolean isValidNic=false;
+    private boolean isValidTelephoneNumber=false;
+    private boolean isValidEmail=false;
+    private boolean isUpdate=false;
+    private boolean isPasswordHide = true;
     private final UserService userService = ServiceFactory.getInstance().getService(ServiceTypes.USER);
     public void initialize(){
         loadCmb();

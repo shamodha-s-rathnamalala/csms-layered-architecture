@@ -84,8 +84,8 @@ public class ItemFormController {
     private final ObservableList<ItemTM>itemObservableList= FXCollections.observableArrayList();
     private ItemTM itemTM = null;
     private ItemDTO itemDTO=null;
-    boolean isValidPrice=false;
-    boolean isUpdate=false;
+    private boolean isValidPrice=false;
+    private boolean isUpdate=false;
     private final ItemService itemService = ServiceFactory.getInstance().getService(ServiceTypes.ITEM);
 
     public void initialize(){

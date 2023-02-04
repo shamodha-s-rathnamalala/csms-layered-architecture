@@ -39,7 +39,7 @@ import java.util.Locale;
 
 public class SuppliesFormController {
     @FXML
-    public Label lblTotal;
+    private Label lblTotal;
 
     @FXML
     private AnchorPane anc;
@@ -63,10 +63,10 @@ public class SuppliesFormController {
     private ComboBox<String> cmbSupplierName;
 
     @FXML
-    public TableColumn<SuppliesCartTM, String> colType;
+    private TableColumn<SuppliesCartTM, String> colType;
 
     @FXML
-    public TableColumn<SuppliesCartTM, String> colDescription;
+    private TableColumn<SuppliesCartTM, String> colDescription;
     @FXML
     private TableColumn<SuppliesCartTM, String> colAction;
 
@@ -82,7 +82,7 @@ public class SuppliesFormController {
     @FXML
     private TableColumn<SuppliesCartTM, Integer> colQty;
     @FXML
-    public TableColumn<SuppliesCartTM, Double> colTotal;
+    private TableColumn<SuppliesCartTM, Double> colTotal;
 
     @FXML
     private TableColumn<SuppliesCartTM, Double> colUnitPrice;
@@ -94,10 +94,10 @@ public class SuppliesFormController {
     private TextField txtQty;
 
     @FXML
-    public TextField txtType;
+    private TextField txtType;
 
     @FXML
-    public TextField txtQtyOnStock;
+    private TextField txtQtyOnStock;
 
     @FXML
     private TextField txtSuppliesId;
@@ -107,8 +107,8 @@ public class SuppliesFormController {
     private final ObservableList<SuppliesCartTM> suppliesCartTMS = FXCollections.observableArrayList();
     private SuppliesCartTM suppliesCartTM;
     private SuppliesDTO suppliesDTO;
-    double netTotal;
-    boolean isValidQuantity;
+    private double netTotal;
+    private boolean isValidQuantity;
     private final SuppliesService suppliesService = ServiceFactory.getInstance().getService(ServiceTypes.SUPPLIES);
     private final SupplierService supplierService = ServiceFactory.getInstance().getService(ServiceTypes.SUPPLIER);
     private final ItemService itemService = ServiceFactory.getInstance().getService(ServiceTypes.ITEM);

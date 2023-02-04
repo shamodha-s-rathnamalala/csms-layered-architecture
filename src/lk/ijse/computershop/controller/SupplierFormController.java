@@ -83,11 +83,11 @@ public class SupplierFormController {
     private final ObservableList<SupplierTM> supplierTMS = FXCollections.observableArrayList();
     private SupplierTM supplierTM = null;
     private SupplierDTO supplierDTO = null;
-    boolean isValidName=false;
-    boolean isValidAddress=false;
-    boolean isValidTelephoneNumber=false;
-    boolean isValidEmail=false;
-    boolean isUpdate=false;
+    private boolean isValidName=false;
+    private boolean isValidAddress=false;
+    private boolean isValidTelephoneNumber=false;
+    private boolean isValidEmail=false;
+    private boolean isUpdate=false;
     private final SupplierService supplierService = ServiceFactory.getInstance().getService(ServiceTypes.SUPPLIER);
     public void initialize(){
         loadTable();

@@ -18,47 +18,61 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 public class SideBarController{
     @FXML
-    public Button btnLoginRecord;
+    private Button btnLoginRecord;
     @FXML
-    public Button btnUser;
+    private Button btnUser;
     @FXML
-    public Button btnEmployee;
+    private Button btnEmployee;
     @FXML
-    public Button btnSupplier;
+    private Button btnSupplier;
     @FXML
-    public Button btnSupplies;
+    private Button btnSupplies;
     @FXML
-    public Button btnViewSupplies;
+    private Button btnViewSupplies;
     @FXML
-    public Button btnItem;
+    private Button btnItem;
     @FXML
-    public Button btnCustomer;
+    private Button btnCustomer;
     @FXML
-    public Button btnPlaceorder;
+    private Button btnPlaceorder;
     @FXML
-    public Button btnRepair;
+    private Button btnRepair;
     @FXML
-    public Button btnViewPurchases;
+    private Button btnViewPurchases;
     @FXML
-    public Button btnStock;
+    private Button btnStock;
     @FXML
-    public Button btnReport;
+    private Button btnReport;
     @FXML
-    public Pane rightPane;
-    public FontAwesomeIconView btnLoginRecordIcon;
-    public FontAwesomeIconView btnUserIcon;
-    public FontAwesomeIconView btnEmployeeIcon;
-    public FontAwesomeIconView btnSupplierIcon;
-    public FontAwesomeIconView btnSuppliesIcon;
-    public FontAwesomeIconView btnViewSuppliesIcon;
-    public FontAwesomeIconView btnItemIcon;
-    public FontAwesomeIconView btnDashBoardIcon;
-    public FontAwesomeIconView btnCustomerIcon;
-    public FontAwesomeIconView btnPlaceorderIcon;
-    public FontAwesomeIconView btnRepairIcon;
-    public FontAwesomeIconView btnViewPurchasesIcon;
-    public FontAwesomeIconView btnStockIcon;
-    public FontAwesomeIconView btnReportIcon;
+    private Pane rightPane;
+    @FXML
+    private FontAwesomeIconView btnLoginRecordIcon;
+    @FXML
+    private FontAwesomeIconView btnUserIcon;
+    @FXML
+    private FontAwesomeIconView btnEmployeeIcon;
+    @FXML
+    private FontAwesomeIconView btnSupplierIcon;
+    @FXML
+    private FontAwesomeIconView btnSuppliesIcon;
+    @FXML
+    private FontAwesomeIconView btnViewSuppliesIcon;
+    @FXML
+    private FontAwesomeIconView btnItemIcon;
+    @FXML
+    private FontAwesomeIconView btnDashBoardIcon;
+    @FXML
+    private FontAwesomeIconView btnCustomerIcon;
+    @FXML
+    private FontAwesomeIconView btnPlaceorderIcon;
+    @FXML
+    private FontAwesomeIconView btnRepairIcon;
+    @FXML
+    private FontAwesomeIconView btnViewPurchasesIcon;
+    @FXML
+    private FontAwesomeIconView btnStockIcon;
+    @FXML
+    private FontAwesomeIconView btnReportIcon;
     @FXML
     private AnchorPane anc;
     @FXML

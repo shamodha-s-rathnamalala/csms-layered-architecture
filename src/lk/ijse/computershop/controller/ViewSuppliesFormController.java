@@ -28,7 +28,7 @@ import java.util.ArrayList;
 
 public class ViewSuppliesFormController {
     @FXML
-    public Label lblSuppliesId;
+    private Label lblSuppliesId;
     @FXML
     private AnchorPane ancViewPurchase;
 

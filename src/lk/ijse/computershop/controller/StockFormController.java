@@ -31,9 +31,9 @@ import java.util.stream.Collectors;
 
 public class StockFormController {
     @FXML
-    public JFXButton btnM;
+    private JFXButton btnM;
     @FXML
-    public JFXButton btnP;
+    private JFXButton btnP;
     @FXML
     private AnchorPane ancStock;
 
