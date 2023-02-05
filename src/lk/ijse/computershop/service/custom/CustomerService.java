@@ -20,8 +20,6 @@ public interface CustomerService extends SuperService {
 
     public String getNextCustomerId() throws SQLException;
 
-    public ArrayList<CustomerTransactionDTO> getAllTransactionByCustomer() throws SQLException;
-
     public long getCustomerCount() throws SQLException;
 
     public CustomerDTO getCustomer(String cusId) throws SQLException;

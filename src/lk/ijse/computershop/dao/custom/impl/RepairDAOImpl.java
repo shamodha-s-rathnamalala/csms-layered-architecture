@@ -103,6 +103,6 @@ public class RepairDAOImpl implements RepairDAO {
 
     @Override
     public boolean updateStatus(String repairId, String status) throws SQLException {
-        return CrudUtil.execute("UPDATE repair set state=? where repairId=?",status,repairId);
+        return CrudUtil.execute("UPDATE repair set status=? where repairId=?",status,repairId);
     }
 }

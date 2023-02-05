@@ -304,7 +304,6 @@ public class  PlaceOrderFormController {
             cmbItemCode.getItems().add(item.getItemCode());
             cmbItemDescription.getItems().add(item.getDescription());
         }
-
         cmbRepairId.getItems().clear();
         cmbRepairId.getItems().addAll(repairService.getNonReturnRepair().stream().map(repairDTO -> repairDTO.getRepairId()).collect(Collectors.toList()));
     }

@@ -75,21 +75,6 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public ArrayList<CustomerTransactionDTO> getAllTransactionByCustomer() throws SQLException {
-        ArrayList<Customer> customers = customerDAO.getAll();
-        ArrayList<CustomerTransactionDTO>customerTransactions=new ArrayList<>();
-        for (int i = customers.size()-1; i >= 0; i--){
-            String name = customers.get(i).getName();
-            double item = queryDAO.sellingIncomeByCustomer(customers.get(i).getCustomerId());
-            double repair = queryDAO.repairIncomeByCustomer(customers.get(i).getCustomerId());
-            String type = (item>0 && repair>0 )?"item/repair":(item>0)?"item":(repair>0)?"repair":null;
-            if (type != null)
-                customerTransactions.add(new CustomerTransactionDTO(name,(item+repair),type));
-        }
-        return customerTransactions;
-    }
-
-    @Override
     public long getCustomerCount() throws SQLException {
         return customerDAO.count();
     }

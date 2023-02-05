@@ -4,10 +4,7 @@ import lk.ijse.computershop.dao.DaoFactory;
 import lk.ijse.computershop.dao.DaoTypes;
 import lk.ijse.computershop.dao.custom.*;
 import lk.ijse.computershop.db.DBConnection;
-import lk.ijse.computershop.dto.ItemTransactionDetailsDTO;
-import lk.ijse.computershop.dto.RepairDTO;
-import lk.ijse.computershop.dto.RepairTransactionDetailsDTO;
-import lk.ijse.computershop.dto.TransactionDTO;
+import lk.ijse.computershop.dto.*;
 import lk.ijse.computershop.entity.Customer;
 import lk.ijse.computershop.entity.ItemTransactionDetails;
 import lk.ijse.computershop.entity.RepairTransactionDetails;
@@ -58,7 +55,7 @@ public class TransactionServiceImpl implements TransactionService {
 
     @Override
     public double getIncomeByDate(LocalDate date) throws SQLException {
-        return queryDAO.sellingIncomeByDate(Date.valueOf(date)) + queryDAO.repairIncomeByDate(Date.valueOf(date));
+        return queryDAO.getIncomeByDate(Date.valueOf(date));
     }
 
     @Override
@@ -79,14 +76,19 @@ public class TransactionServiceImpl implements TransactionService {
             connection.setAutoCommit(false);
             System.out.println("Auto commit on");
             if (transactionDAO.save(convertor.toTransaction(transactionDTO))) {
-                if (saveRepairDetails(transactionDTO.getRepairTransactionDetailsArrayList()))
-                    if (saveItemDetails(transactionDTO.getItemTransactionDetailsArrayList())){
+                if (saveRepairDetails(transactionDTO.getRepairTransactionDetailsArrayList())) {
+                    if (saveItemDetails(transactionDTO.getItemTransactionDetailsArrayList())) {
                         connection.commit();
+                        System.out.println("commit");
                         return;
                     }
+                }
             }
-            connection.rollback();
             throw new SQLException("The order could not be placed !");
+        }catch (SQLException e){
+            connection.rollback();
+            System.out.println("roll");
+            throw new SQLException(e);
         }finally {
             connection.setAutoCommit(true);
             System.out.println("Auto commit on");
@@ -131,6 +133,19 @@ public class TransactionServiceImpl implements TransactionService {
             ));
         }
         return transactionDTOS;
+    }
+
+    @Override
+    public ArrayList<CustomerTransactionDTO> getAllCustomerTransaction() throws SQLException {
+        ArrayList<Transaction> transactions = transactionDAO.getAll();
+        ArrayList<CustomerTransactionDTO> customerTransactionDTOS = new ArrayList<>();
+        for (Transaction transaction : transactions){
+            Optional<CustomerTransactionDTO> optional = queryDAO.getAllCustomerTransaction(transaction.getTransactionId());
+            if (optional.isPresent()) {
+                customerTransactionDTOS.add(optional.get());
+            }
+        }
+        return customerTransactionDTOS;
     }
 
     private double getRepairTotal(ArrayList<RepairTransactionDetails> repairTransactionDetails) {

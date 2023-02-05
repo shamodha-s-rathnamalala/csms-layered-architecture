@@ -1,5 +1,6 @@
 package lk.ijse.computershop.service.custom;
 
+import lk.ijse.computershop.dto.CustomerTransactionDTO;
 import lk.ijse.computershop.dto.RepairTransactionDetailsDTO;
 import lk.ijse.computershop.dto.TransactionDTO;
 import lk.ijse.computershop.service.SuperService;
@@ -24,4 +25,6 @@ public interface TransactionService extends SuperService {
     public TransactionDTO getTransaction(String transactionId) throws SQLException;
 
     public ArrayList<TransactionDTO> getAllFullTransaction() throws SQLException;
+
+    public ArrayList<CustomerTransactionDTO> getAllCustomerTransaction() throws SQLException;
 }

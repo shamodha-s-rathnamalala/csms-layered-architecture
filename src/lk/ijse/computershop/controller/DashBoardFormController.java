@@ -29,6 +29,7 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 import java.util.Locale;
 
 public class DashBoardFormController {
@@ -71,45 +72,41 @@ public class DashBoardFormController {
     }
 
     private void loadScrollPane() {
-        VBox vBox=new VBox();
-        Label nameLabel=new Label("");
-        nameLabel.setStyle("-fx-text-fill: #000000;" +
-                "-fx-font-size:16px;"+
-                "-fx-font-family: Arial Rounded MT Bold;"
-        );
-        nameLabel.setPrefWidth(200);
-        Label priceLabel=new Label("");
-        priceLabel.setStyle("-fx-text-fill: #000000;"+
-                "-fx-font-size: 16px;"+
-                "-fx-font-family: Arial Rounded MT Bold;"
-        );
-        priceLabel.setPrefWidth(80);
-        priceLabel.setAlignment(Pos.CENTER);
-        Label typeLabel=new Label("");
-        typeLabel.setStyle("-fx-text-fill: #000000;"+
-                "-fx-font-size: 16px;"+
-                "-fx-font-family: Arial Rounded MT Bold;"
-        );
-        typeLabel.setPrefWidth(95);
-        typeLabel.setAlignment(Pos.CENTER_RIGHT);
         try {
-            ArrayList<CustomerTransactionDTO> customerTransactions = customerService.getAllTransactionByCustomer();
+            ArrayList<CustomerTransactionDTO> customerTransactions = transactionService.getAllCustomerTransaction();
+            VBox vBox = new VBox();
             for (CustomerTransactionDTO data : customerTransactions){
-                nameLabel.setText("   "+data.getName());
-                priceLabel.setText(String.valueOf(data.getTotal()));
-                typeLabel.setText(data.getType());
-                HBox hBox=new HBox(nameLabel,priceLabel,typeLabel);
-                hBox.setStyle("-fx-border-width: 0px 0px 1px 0px;"+
-                        "-fx-border-color: #000000");
+                Label nameLabel=new Label("   "+data.getName());
+                Label priceLabel=new Label(String.valueOf(data.getTotal()));
+                Label typeLabel=new Label(data.getType());
+                nameLabel.setPrefWidth(200);
+                priceLabel.setPrefWidth(80);
+                priceLabel.setAlignment(Pos.CENTER);
+                typeLabel.setPrefWidth(95);
+                typeLabel.setAlignment(Pos.CENTER_RIGHT);
+                nameLabel.setStyle("-fx-text-fill: #000000;" +
+                        "-fx-font-size:16px;"+
+                        "-fx-font-family: Arial Rounded MT Bold;"
+                );
+                priceLabel.setStyle("-fx-text-fill: #000000;"+
+                        "-fx-font-size: 16px;"+
+                        "-fx-font-family: Arial Rounded MT Bold;"
+                );
+                typeLabel.setStyle("-fx-text-fill: #000000;"+
+                        "-fx-font-size: 16px;"+
+                        "-fx-font-family: Arial Rounded MT Bold;"
+                );
+                HBox hBox = new HBox(nameLabel,priceLabel,typeLabel);
+                hBox.setStyle("-fx-border-width: 0px 0px 1px 0px;"+ "-fx-border-color: #000000");
                 vBox.getChildren().add(hBox);
             }
+            scPane.setContent(vBox);
         } catch (SQLException e) {
             ButtonType result = CustomAlert.getInstance().showAlert(Alert.AlertType.CONFIRMATION, "Data Not Loading", e + ",Data Not Loading !\nYou Want Exit ? ");
             if (result==ButtonType.OK){
                 Platform.exit();
             }
         }
-        scPane.setContent(vBox);
     }
     private void loadBarChart() {
         try {
