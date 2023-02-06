@@ -7,7 +7,6 @@ import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.view.JasperViewer;
 
 import java.io.InputStream;
-import java.sql.SQLException;
 
 public class ReportsFormController {
     @FXML
@@ -29,7 +28,7 @@ public class ReportsFormController {
 
     @FXML
     public void customerReport(ActionEvent actionEvent) {
-        InputStream inputStream = this.getClass().getResourceAsStream("/lk/ijse/computershop/report/CustomerReport.jrxml");
+        InputStream inputStream = this.getClass().getResourceAsStream("/lk/ijse/computershop/report/Customer.customer.jrxmljrxml");
         runJasperReport(inputStream);
     }
 }
