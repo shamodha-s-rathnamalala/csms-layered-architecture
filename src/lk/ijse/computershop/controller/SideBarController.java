@@ -4,14 +4,14 @@ import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
-import lk.ijse.computershop.util.Navigation;
-import lk.ijse.computershop.util.Routes;
 
 import java.io.IOException;
 import java.time.LocalDate;
@@ -100,7 +100,6 @@ public class SideBarController{
         SideBarController.userName = userName;
     }
     public void initialize(){
-        //Project.setPane(mainPane);
         setProfileDetails();
         setButtonsArray();
         ActionEvent actionEvent=new ActionEvent();
@@ -150,84 +149,111 @@ public class SideBarController{
         vbCashier.setVisible(false);
         vbAdmin.setVisible(true);
         goLoginRecordAction(event);
-        Navigation.navigate(Routes.ADMIN, anc);
+//        Navigation.navigate(Routes.ADMIN, anc);
+        initUI("LoginRecordForm.fxml");
     }
     @FXML
     void goCustomerOnAction(ActionEvent event) {
         changeSelectedButton(btnCustomer);
-        Navigation.navigate(Routes.CUSTOMER, anc);
+//        Navigation.navigate(Routes.CUSTOMER, anc);
+        initUI("CustomerForm.fxml");
     }
     @FXML
     void goDashBoardOnAction(ActionEvent event) {
         vbCashier.setVisible(true);
         vbAdmin.setVisible(false);
         changeSelectedButton(btnDashBoard);
-        Navigation.navigate(Routes.DASHBOARD, anc);
+//        Navigation.navigate(Routes.DASHBOARD, anc);
+        initUI("DashBoardForm.fxml");
     }
     @FXML
     void goPlaceOrderOnAction(ActionEvent event) {
         changeSelectedButton(btnPlaceorder);
-        Navigation.navigate(Routes.PLACE_ORDER, anc);
+//        Navigation.navigate(Routes.PLACE_ORDER, anc);
+        initUI("PlaceOrderForm.fxml");
     }
     @FXML
     void goRepairOnAction(ActionEvent event) {
         changeSelectedButton(btnRepair);
-        Navigation.navigate(Routes.REPAIR, anc);
+//        Navigation.navigate(Routes.REPAIR, anc);
+        initUI("RepairForm.fxml");
     }
     @FXML
     void goReportsOnAction(ActionEvent event) {
         changeSelectedButton(btnReport);
-        Navigation.navigate(Routes.REPORTS, anc);
+//        Navigation.navigate(Routes.REPORTS, anc);
+        initUI("ReportsForm.fxml");
     }
     @FXML
     void goStockOnAction(ActionEvent event) {
         changeSelectedButton(btnStock);
-        Navigation.navigate(Routes.STOCK, anc);
+//        Navigation.navigate(Routes.STOCK, anc);
+        initUI("StockForm.fxml");
     }
     @FXML
     public void goViewPurchasesOnAction(ActionEvent event) {
         changeSelectedButton(btnViewPurchases);
-        Navigation.navigate(Routes.VIEW_PURCHASES, anc);
+//        Navigation.navigate(Routes.VIEW_PURCHASES, anc);
+        initUI("ViewPurchasesForm.fxml");
     }
     @FXML
     void goEmployerOnAction(ActionEvent event) {
         changeSelectedButton(btnEmployee);
-        Navigation.navigate(Routes.EMPLOYEE, anc);
+//        Navigation.navigate(Routes.EMPLOYEE, anc);
+        initUI("EmployeeForm.fxml");
     }
     @FXML
     void goItemOnAction(ActionEvent event) {
         changeSelectedButton(btnItem);
-        Navigation.navigate(Routes.ITEM, anc);
+//        Navigation.navigate(Routes.ITEM, anc);
+        initUI("ItemForm.fxml");
     }
     @FXML
     void goLoginRecordAction(ActionEvent event) {
         changeSelectedButton(btnLoginRecord);
-        Navigation.navigate(Routes.ADMIN, anc);
+//        Navigation.navigate(Routes.ADMIN, anc);
+        initUI("LoginRecordForm.fxml");
     }
     @FXML
     void goSupplierOnAction(ActionEvent event) {
         changeSelectedButton(btnSupplier);
-        Navigation.navigate(Routes.SUPPLIER, anc);
+//        Navigation.navigate(Routes.SUPPLIER, anc);
+        initUI("SupplierForm.fxml");
     }
     @FXML
     void goSuppliesOnAction(ActionEvent event) {
         changeSelectedButton(btnSupplies);
-        Navigation.navigate(Routes.SUPPLIES, anc);
+//        Navigation.navigate(Routes.SUPPLIES, anc);
+        initUI("SuppliesForm.fxml");
     }
     @FXML
     void goUserOnAction(ActionEvent event) {
         changeSelectedButton(btnUser);
-        Navigation.navigate(Routes.USER, anc);
+//        Navigation.navigate(Routes.USER, anc);
+        initUI("UserForm.fxml");
     }
     @FXML
     public void goViewSuppliesOnAction(ActionEvent actionEvent) {
         changeSelectedButton(btnViewSupplies);
-        Navigation.navigate(Routes.VIEW_SUPPLIES, anc);
+//        Navigation.navigate(Routes.VIEW_SUPPLIES, anc);
+        initUI("ViewSuppliesForm.fxml");
     }
     @FXML
-    void logOutOnAction(ActionEvent event) throws IOException {
-        Navigation.navigate(Routes.LOGIN,mainPane);
+    void logOutOnAction(ActionEvent event) {
+//        Navigation.navigate(Routes.LOGIN,mainPane);
+        initUI("LoginForm.fxml");
     }
+
+    private void initUI(String location) {
+        Pane pane = location.equals("LoginForm.fxml") ? mainPane : anc;
+        try {
+            pane.getChildren().clear();
+            pane.getChildren().add(FXMLLoader.load(getClass().getResource("../view/" + location)));
+        } catch (IOException e) {
+            new Alert(Alert.AlertType.ERROR, "Forms Error !\n"+e.getMessage()).show();
+        }
+    }
+
     public void exitOnAction(ActionEvent actionEvent) {
         Platform.exit();
     }

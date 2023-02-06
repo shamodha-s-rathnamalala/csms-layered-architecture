@@ -5,6 +5,7 @@ import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import javafx.animation.TranslateTransition;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
@@ -21,9 +22,8 @@ import lk.ijse.computershop.service.ServiceTypes;
 import lk.ijse.computershop.service.custom.UserService;
 import lk.ijse.computershop.service.exception.NotFoundException;
 import lk.ijse.computershop.util.CustomAlert;
-import lk.ijse.computershop.util.Navigation;
-import lk.ijse.computershop.util.Routes;
 
+import java.io.IOException;
 import java.sql.SQLException;
 
 public class LoginFormController{
@@ -94,7 +94,7 @@ public class LoginFormController{
                     try {
                         userService.saveLogin(user);
                         SideBarController.setUserProfile(isAdmin,userName);
-                        Navigation.navigate(Routes.MAIN, loginForm);
+                        initUI("SideBar.fxml");
                     }  catch (SQLException e){
                         CustomAlert.getInstance().showAlert(Alert.AlertType.ERROR, "Data Base Error", e.getMessage());
                     }
@@ -112,7 +112,7 @@ public class LoginFormController{
                     try {
                         userService.saveLogin(user);
                         SideBarController.setUserProfile(isAdmin,userName);
-                        Navigation.navigate(Routes.MAIN, loginForm);
+                        initUI("SideBar.fxml");
                     } catch (SQLException e){
                         CustomAlert.getInstance().showAlert(Alert.AlertType.ERROR, "Data Base Error", e.getMessage());
                     }
@@ -128,6 +128,15 @@ public class LoginFormController{
             }
         }
         lblErrors.setText(error);
+    }
+
+    private void initUI(String location) {
+        try {
+            loginForm.getChildren().clear();
+            loginForm.getChildren().add(FXMLLoader.load(getClass().getResource("../view/" + location)));
+        } catch (IOException e) {
+            new Alert(Alert.AlertType.ERROR, "Forms Error !\n"+e.getMessage()).show();
+        }
     }
 
     private boolean verification(String userName, String userPassword, String rank) {
