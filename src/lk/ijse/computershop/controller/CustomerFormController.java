@@ -15,7 +15,6 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.util.Callback;
 import lk.ijse.computershop.dto.CustomerDTO;
@@ -33,9 +32,6 @@ import java.sql.SQLException;
 import java.util.stream.Collectors;
 
 public class CustomerFormController {
-
-    @FXML
-    private AnchorPane anc;
 
     @FXML
     private JFXButton btnAdd;
