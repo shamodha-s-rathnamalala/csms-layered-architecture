@@ -20,6 +20,7 @@ public class Regex {
     public static Regex getInstance(){
         return regex==null?(regex=new Regex()):regex;
     }
+
     public boolean isValid(RegexType regexType,String text){
         Matcher matcher;
         switch (regexType){
@@ -43,3 +44,4 @@ public class Regex {
         }
     }
 }
+
