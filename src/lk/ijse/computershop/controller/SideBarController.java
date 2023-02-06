@@ -149,13 +149,11 @@ public class SideBarController{
         vbCashier.setVisible(false);
         vbAdmin.setVisible(true);
         goLoginRecordAction(event);
-//        Navigation.navigate(Routes.ADMIN, anc);
         initUI("LoginRecordForm.fxml");
     }
     @FXML
     void goCustomerOnAction(ActionEvent event) {
         changeSelectedButton(btnCustomer);
-//        Navigation.navigate(Routes.CUSTOMER, anc);
         initUI("CustomerForm.fxml");
     }
     @FXML
@@ -163,84 +161,70 @@ public class SideBarController{
         vbCashier.setVisible(true);
         vbAdmin.setVisible(false);
         changeSelectedButton(btnDashBoard);
-//        Navigation.navigate(Routes.DASHBOARD, anc);
         initUI("DashBoardForm.fxml");
     }
     @FXML
     void goPlaceOrderOnAction(ActionEvent event) {
         changeSelectedButton(btnPlaceorder);
-//        Navigation.navigate(Routes.PLACE_ORDER, anc);
         initUI("PlaceOrderForm.fxml");
     }
     @FXML
     void goRepairOnAction(ActionEvent event) {
         changeSelectedButton(btnRepair);
-//        Navigation.navigate(Routes.REPAIR, anc);
         initUI("RepairForm.fxml");
     }
     @FXML
     void goReportsOnAction(ActionEvent event) {
         changeSelectedButton(btnReport);
-//        Navigation.navigate(Routes.REPORTS, anc);
         initUI("ReportsForm.fxml");
     }
     @FXML
     void goStockOnAction(ActionEvent event) {
         changeSelectedButton(btnStock);
-//        Navigation.navigate(Routes.STOCK, anc);
         initUI("StockForm.fxml");
     }
     @FXML
     public void goViewPurchasesOnAction(ActionEvent event) {
         changeSelectedButton(btnViewPurchases);
-//        Navigation.navigate(Routes.VIEW_PURCHASES, anc);
         initUI("ViewPurchasesForm.fxml");
     }
     @FXML
     void goEmployerOnAction(ActionEvent event) {
         changeSelectedButton(btnEmployee);
-//        Navigation.navigate(Routes.EMPLOYEE, anc);
         initUI("EmployeeForm.fxml");
     }
     @FXML
     void goItemOnAction(ActionEvent event) {
         changeSelectedButton(btnItem);
-//        Navigation.navigate(Routes.ITEM, anc);
         initUI("ItemForm.fxml");
     }
     @FXML
     void goLoginRecordAction(ActionEvent event) {
         changeSelectedButton(btnLoginRecord);
-//        Navigation.navigate(Routes.ADMIN, anc);
         initUI("LoginRecordForm.fxml");
     }
     @FXML
     void goSupplierOnAction(ActionEvent event) {
         changeSelectedButton(btnSupplier);
-//        Navigation.navigate(Routes.SUPPLIER, anc);
         initUI("SupplierForm.fxml");
     }
     @FXML
     void goSuppliesOnAction(ActionEvent event) {
         changeSelectedButton(btnSupplies);
-//        Navigation.navigate(Routes.SUPPLIES, anc);
         initUI("SuppliesForm.fxml");
     }
     @FXML
     void goUserOnAction(ActionEvent event) {
         changeSelectedButton(btnUser);
-//        Navigation.navigate(Routes.USER, anc);
         initUI("UserForm.fxml");
     }
     @FXML
     public void goViewSuppliesOnAction(ActionEvent actionEvent) {
         changeSelectedButton(btnViewSupplies);
-//        Navigation.navigate(Routes.VIEW_SUPPLIES, anc);
         initUI("ViewSuppliesForm.fxml");
     }
     @FXML
     void logOutOnAction(ActionEvent event) {
-//        Navigation.navigate(Routes.LOGIN,mainPane);
         initUI("LoginForm.fxml");
     }
 

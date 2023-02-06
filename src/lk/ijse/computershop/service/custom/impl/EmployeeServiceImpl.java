@@ -24,10 +24,6 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public ArrayList<EmployeeDTO> getAllEmployee() throws SQLException {
-//        ArrayList<CustomerDTO>arrayList=new ArrayList<>();
-//        for (Customer customer:customerDAO.getAll())
-//            arrayList.add(convertor.fromCustomer(customer));
-//        return arrayList;
         return (ArrayList<EmployeeDTO>) employeeDAO.getAll().stream().map(employee -> convertor.fromEmployee(employee)).collect(Collectors.toList());
     }
 
