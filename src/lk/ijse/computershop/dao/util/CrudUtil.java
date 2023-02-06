@@ -8,7 +8,6 @@ import java.sql.SQLException;
 public class CrudUtil {
      public static <T>T execute(String sql, Object... args) throws SQLException {
          PreparedStatement stm = DBConnection.getInstance().getConnection().prepareStatement(sql);
-
          for (int i = 0; i < args.length; i++) {
              stm.setObject((i+1), args[i]);
          }
