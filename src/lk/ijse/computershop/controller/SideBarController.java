@@ -102,12 +102,11 @@ public class SideBarController{
     public void initialize(){
         setProfileDetails();
         setButtonsArray();
-        ActionEvent actionEvent=new ActionEvent();
         if (isAdmin)
             btnAdmin.setVisible(true);
         else
             btnAdmin.setVisible(false);
-        goDashBoardOnAction(actionEvent);
+        goDashBoardOnAction();
     }
     private void setProfileDetails() {
         lblUserName.setText(userName);
@@ -157,7 +156,7 @@ public class SideBarController{
         initUI("CustomerForm.fxml");
     }
     @FXML
-    void goDashBoardOnAction(ActionEvent event) {
+    void goDashBoardOnAction() {
         vbCashier.setVisible(true);
         vbAdmin.setVisible(false);
         changeSelectedButton(btnDashBoard);

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="mainPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: transparent;" styleClass="transparent" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.computershop.controller.SplashScreenController">
+   <children>
+      <Pane prefHeight="700.0" prefWidth="1350.0" style="-fx-background-color: transparent;" styleClass="transparent" stylesheets="@../style/style.css">
+         <children>
+            <Pane layoutX="425.0" layoutY="200.0" prefHeight="300.0" prefWidth="500.0" style="-fx-background-color: #000000;">
+               <children>
+                  <Pane prefHeight="285.0" prefWidth="500.0">
+                     <children>
+                        <ImageView fx:id="imgSlash" fitHeight="285.0" fitWidth="500.0" pickOnBounds="true" />
+                        <Label fx:id="lblLoading" alignment="CENTER" layoutY="268.0" prefWidth="500.0" text="Welcome to Computer shop Management System" textAlignment="CENTER">
+                           <font>
+                              <Font name="Times New Roman" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="421.0" text="CSMS V1.0.0">
+                           <font>
+                              <Font name="Arial" size="13.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Rectangle fx:id="rctContainer" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="8.0" layoutX="2.0" layoutY="290.0" stroke="BLACK" strokeType="INSIDE" width="496.0" />
+                  <Rectangle fx:id="rctLoading" arcHeight="5.0" arcWidth="5.0" fill="#1ffff9" height="8.0" layoutX="2.0" layoutY="290.0" stroke="BLACK" strokeType="INSIDE" width="26.0" />
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

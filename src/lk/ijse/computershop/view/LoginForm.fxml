@@ -176,12 +176,12 @@
             </Pane>
             <Pane fx:id="mainPane" layoutX="475.0" layoutY="50.0" prefHeight="600.0" prefWidth="400.0" styleClass="main-Pane">
                <children>
-                  <Label layoutX="184.0" layoutY="289.0" prefHeight="39.0" prefWidth="140.0" text="Computers" textAlignment="CENTER" textFill="#575757">
+                  <Label layoutX="223.0" layoutY="286.0" prefHeight="39.0" prefWidth="140.0" text="Computers" textAlignment="CENTER" textFill="#575757">
                      <font>
                         <Font name="Pristina" size="24.0" />
                      </font>
                   </Label>
-                  <Label layoutX="47.0" layoutY="227.0" text="PRONET" textFill="WHITE">
+                  <Label alignment="CENTER" layoutY="227.0" prefWidth="400.0" text="PRONET" textFill="WHITE">
                      <font>
                         <Font name="Tahoma Bold" size="64.0" />
                      </font>

@@ -21,7 +21,7 @@ public class AppInitializer extends Application {
         stage.setTitle("Pronet Computers");
         stage.getIcons().add(new Image("/lk/ijse/computershop/asset/logo.png"));
         stage.initStyle(StageStyle.TRANSPARENT);
-        Parent root = FXMLLoader.load(getClass().getResource("../view/LoginForm.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../view/SplashScreen.fxml"));
         root.setOnMousePressed(event -> {
             xOffset = event.getSceneX();
             yOffset = event.getSceneY();
