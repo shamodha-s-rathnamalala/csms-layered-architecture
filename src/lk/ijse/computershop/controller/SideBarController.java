@@ -91,8 +91,8 @@ public class SideBarController{
     private VBox vbAdmin;
     @FXML
     private VBox vbCashier;
-    private ArrayList<Button> buttonArrayList=new ArrayList<>();
-    private ArrayList<FontAwesomeIconView>fxView=new ArrayList<>();
+    private ArrayList<Button> buttonArrayList = new ArrayList<>();
+    private ArrayList<FontAwesomeIconView> fxView =new ArrayList<>();
     private static boolean isAdmin;
     private static String userName;
     public static void setUserProfile(boolean isAdmin, String userName){
