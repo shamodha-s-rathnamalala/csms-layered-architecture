@@ -9,6 +9,9 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+/**
+ * @author : shamodha-s-rathnamalala
+ **/
 
 public class AppInitializer extends Application {
     private static double xOffset = 0;
